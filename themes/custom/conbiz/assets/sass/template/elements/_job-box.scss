@@ -1,0 +1,59 @@
+.gva-job-box{
+  padding: 40px;
+  background: $white;
+  box-shadow: 0px 10px 30px 0 rgba(215, 215, 215, 0.33);
+  @include border-radius(7px);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    opacity: 1.0;
+    transition: .5s;
+    transform: perspective(400px) scaleY(0);
+    transform-origin: bottom;
+    z-index: 0;
+    background: $theme-color;
+    @include border-radius(7px);
+  }
+  > *{
+    position: relative;
+    z-index: 1;
+  }
+  .logo-inner{
+    margin-bottom: 20px;
+  }
+  .job-type{
+    font-size: 16px;
+    font-weight: 500;
+    color: $body-color;
+  }
+  .box-title{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .action{
+    margin-top: 30px;
+  }
+  &:hover{
+    color: $white;
+    &:before{
+      opacity: 1;
+      transform: perspective(400px) scaleY(1.0);
+    }
+    .job-type, .box-title a{
+      color: $white;
+    }
+    .action a{
+      background: $white;
+      border-color: $white;
+    }
+  }
+}

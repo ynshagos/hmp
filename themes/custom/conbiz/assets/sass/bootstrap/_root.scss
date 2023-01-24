@@ -1,0 +1,49 @@
+:root {
+  // Custom variable values only support SassScript inside `#{}`.
+  @each $color, $value in $colors {
+    --#{$color}: #{$value};
+  }
+
+  @each $color, $value in $theme-colors {
+    --#{$color}: #{$value};
+  }
+
+  @each $bp, $value in $grid-breakpoints {
+    --breakpoint-#{$bp}: #{$value};
+  }
+
+  --font-family-sans-serif: #{inspect($font-family-sans-serif)};
+  --font-family-monospace: #{inspect($font-family-monospace)};
+
+  /****/
+  --conbiz-font-sans-serif: "DM Sans", sans-serif;
+  --conbiz-heading-font-family: 'Manrope', sans-serif;
+
+  --conbiz-theme-color            : #f94d1c;
+  --conbiz-theme-color-second     : #2A2C38;
+  
+  --font-body-weight              : 400;
+  --font-body-size                : 17px;
+
+  --body-color                    : #74787c;
+  --body-link-color               : #1a1a1a;
+  --body-link-color-hover         : #f94d1c;
+
+  --topbar-bg-color               : #2A2C38;
+  --topbar-color                  : #F5F5F5;
+  --topbar-link-color             : #F5F5F5;
+  --topbar-link-color-hover       : #2A2C38;
+
+  --menu-link-color               : #1a1a1a;
+  --menu-link-color-hover         : #f94d1c;
+  --submenu-bg-color              : #ffffff;
+  --submenu-color                 : #74787c;
+  --submenu-link-color            : #74787c;
+  --submenu-link-color-hover      : #f94d1c;
+
+  --footer-bg-color               : #0f0f1d; 
+  --footer-color                  : #ffffff;
+  --footer-link-color             : #ffffff;
+  --footer-link-color-hover       : #f94d1c;
+
+}

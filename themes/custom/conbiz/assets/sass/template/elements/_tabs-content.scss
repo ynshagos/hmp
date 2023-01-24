@@ -1,0 +1,144 @@
+.gsc-tabs-content{
+   background: $white;
+   .nav-tabs{
+      text-align: center;
+      margin-bottom: 0;
+      justify-content: center;
+      border-bottom: 0;
+      @include media-breakpoint-down(xs){
+         display: block;
+      }
+      > li{
+         display: inline-block;
+         width: 25%;
+         @include media-breakpoint-down(xs){
+            width: auto;
+            margin-bottom: 10px;
+         }
+         + li {
+            padding-left: 30px;
+            @include media-breakpoint-down(sm){
+               padding-left: 5px;
+            }
+         }
+         > a{
+            font-size: 18px;
+            font-weight: 800;
+            padding: 15px 20px;
+            width: 100%;
+            display: inline-block;
+            text-transform: none;
+            letter-spacing: -0.54px;
+            background: rgba(#2e2e36, 0.05);
+            @include border-radius(7px);
+            @include media-breakpoint-down(sm){
+               padding: 8px;
+               font-size: 17px;
+            }
+            &.active, &:hover, &:focus{
+               background: $theme-color;
+               color: $white;
+               box-shadow: 0px 10px 60px 0 rgba(249, 77, 28, 0.3);
+            }
+         }         
+      }
+   }
+   .tab-content{
+      padding: 80px 0 0;
+      @include media-breakpoint-down(md){
+        padding-top: 30px;
+      }
+      .tab-content-inner{
+         @include media-breakpoint-up(md){
+            display: flex;
+            align-items: center;
+            position: relative;
+            > *{
+               -webkit-box-flex: 0;
+               -ms-flex: 0 0 50%;
+               flex: 0 0 50%;
+               max-width: 50%;
+            }
+         }
+         @include media-breakpoint-up(lg){
+         &:before{
+            background: url('#{$base-theme-image-path}/bg-heart.png') no-repeat left bottom;
+            width: 282px;
+            height: 290px;
+            position: absolute;
+            content: "";
+            top: 65%;
+            right: 85%;
+            z-index: -1;
+         }
+      }
+         .images{
+            padding-right: 15px;
+            position: relative;
+            overflow: hidden;
+            @include media-breakpoint-down(sm){
+               margin-bottom: 40px;
+               padding-right: 0;
+            }
+            .content-inner{
+               width: 100%;
+               text-align: center;
+               span{
+                  position: relative;
+                  display: inline-block;
+               }
+            }
+            &:before{
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               display: block;
+               content: '';
+               width: 0;
+               height: 0;
+               background: rgba(255, 255, 255, .2);
+               border-radius: 50%;
+               transform: translate(-50%, -50%);
+               opacity: 0;
+               z-index: 10;
+            }
+            &:hover:before {
+               -webkit-animation: circle .75s;
+               animation: circle .75s;
+            }
+         }
+         h2{
+            letter-spacing: -0.9px;
+            font-size: 30px;
+            line-height: 40px;
+            font-weight: 800;
+            margin-bottom: 35px;
+            @include media-breakpoint-down(lg){
+               font-size: 26px;
+               line-height: 30px;
+               margin-bottom: 20px;
+            }
+         }
+         .content-inner{
+            padding-left: 85px;
+            @include media-breakpoint-down(lg){
+               padding-left: 15px;
+            }
+            @include media-breakpoint-down(sm){
+               padding-left: 0;
+            }
+         } 
+      }
+   }
+   &.style-2{
+      background: $white;
+      @include box-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+   }
+   &.style-3{
+      background: $white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+   }
+}

@@ -1,0 +1,49 @@
+.gsc-icon-box-new{
+  background: #fafafa;
+  text-align: center;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  @include border-radius(7px);
+  @include media-breakpoint-down(sm){
+    margin-bottom: 30px;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    opacity: 1.0;
+    transition: .5s;
+    transform: perspective(400px) scaleY(0);
+    transform-origin: bottom;
+    z-index: 0;
+    background: url('#{$base-theme-image-path}/bg-career.png') no-repeat left center $theme-color;
+  }
+  > *{
+    position: relative;
+    z-index: 1;
+  }
+  .icon-inner{
+    color: $black-2;
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+  .title{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.2;
+  }  
+  &:hover{
+    &:before{
+      opacity: 1;
+      transform: perspective(400px) scaleY(1.0);
+    }
+    .icon-inner, .title{
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+conbiz_sub.skin.default:
+   version: VERSION
+   header: true
+   css:
+      theme:
+         css/style.css: {}
+   js:
+      js/main.js: {}
+      # js/custom.js: {}
+      js/wheel.js: {}
+      js/imageMapResizer.min.js: {}

@@ -1,0 +1,261 @@
+.gsc-call-to-action{
+  .title{
+    font-weight: 700;
+    font-size: 42px;
+    margin: 0;
+    @include media-breakpoint-down(md){
+      &.fsize-00{
+        font-size: 34px;
+      }
+    }
+  }
+  .sub-title{
+    color: #7f8284;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: $font-weight-bold;
+    margin-bottom: 30px;
+    margin-top: -7px;
+    @include media-breakpoint-down(md){
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    > span{
+      padding: 0 55px;
+      position: relative;
+      &:after{
+        content: '';
+        @include transform(translateY(-50%));
+        @include size(40px, 3px);
+        background: $theme-color;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 1;
+      }
+      &:before{
+        content: '';
+        @include transform(translateY(-50%));
+        @include size(40px, 3px);
+        background: $theme-color;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        z-index: 1;
+      }
+    }
+  }
+ 
+  .box-background {
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 1;
+     background-size: cover;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(226, 50, 0, 0.70);
+      top: 0;
+      left: 0;
+    }
+  }
+  .button-action{
+    > a{
+      margin: 0 10px;
+      display: inline-block;
+      @include media-breakpoint-down(xs){
+        margin-bottom: 10px;
+      }
+      i{
+        margin-left: 10px;
+      }
+    }
+  }
+  .desc{
+    line-height: 30px;
+  }
+  .content{
+    position: relative;
+    z-index: 10;
+  }
+  &.button-right{
+    position: static;
+    .title{
+      margin: 0 0 10px!important;
+    }
+    .heading-line{
+      margin: 16px 0;
+    }
+    .content{
+      padding-right: 170px;
+      @media(max-width: 800px){
+        padding-right: 0;
+      }
+      p{
+        margin: 0;
+      }
+    }
+    .button-action{
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      z-index: 1;
+      margin-top: -20px;
+      @include media-breakpoint-down(sm){
+        position: unset;
+        margin-top: 30px;
+      }
+    }
+  }
+  &.button-left{
+    position: relative;
+    text-align: right;
+    .title{
+      margin: 0 0 10px!important;
+    }
+    .heading-line{
+      margin: 16px 0;
+    }
+    .content{
+      padding-left: 210px;
+      @media(max-width: 800px){
+        padding-left: 0;
+      }
+      p{
+        margin: 0;
+      }
+    }
+    .button-action{
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -20px;
+      z-index: 1;
+      @media(max-width: 800px){
+        position: relative;
+        margin-top: 15px;
+      }
+    }
+  }
+  &.button-bottom-left, &.button-bottom-right, &.button-right{
+    .title{
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.56px;
+      margin-bottom: 50px;
+      @include media-breakpoint-down(lg){
+        font-size: 46px;
+      }
+      @include media-breakpoint-down(md){
+        font-size: 38px;
+      }
+      @include media-breakpoint-down(sm){
+        font-size: 30px;
+      }
+    }
+    .sub-title{
+      > span:before{
+        content: none;
+      }
+    }
+  }
+  &.button-center{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    &.bg-image{
+      min-height: 234px;
+      .content-inner{
+        padding: 30px;
+        @include media-breakpoint-down(lg){
+          padding: 15px;
+        }
+      }
+      .title{
+        margin-bottom: 30px;
+      }
+      .button-action a{
+        padding: 10px 25px;
+      }
+    }
+    .box-background{
+      @include border-radius(7px);
+      overflow: hidden;
+    }
+    .sub-title{
+      &:before, &:after{
+        background: $white;
+      }
+    }
+    .title{
+      font-size: 52px;
+      font-weight: 800;
+      letter-spacing: -1.56px;
+      position: relative;
+      margin-bottom: 50px;
+      margin-top: 0;
+      @include media-breakpoint-down(lg){
+        font-size: 46px;
+      }
+      @include media-breakpoint-down(md){
+        font-size: 38px;
+      }
+      @include media-breakpoint-down(sm){
+        font-size: 30px;
+      }
+    }
+    .desc{
+      margin-top: 20px;
+    }
+    
+    &.text-light{
+      .title{
+        &:after{
+          background: $white;
+        }
+      }
+    }
+  }
+  &.has-background{
+    padding: 35px;
+    margin-bottom: 30px;
+    .title{
+      margin-bottom: 0;
+      padding-bottom: 15px;
+      font-size: 20px;
+      &:after{
+        display: none;
+      }
+    }
+    &.button-right{
+      .button-action{
+        right: 30px;
+      }
+    }
+  }
+  &.text-light{
+    .content{
+      color: $white;
+      .sub-title{
+        color: $white;
+        >span:before,>span:after{
+          background: $white;
+        } 
+      }
+      .title{
+        color: $white;
+      }
+      .desc *{
+        color: rgba(255, 255, 255, 0.8)
+      }
+    }
+  }
+}

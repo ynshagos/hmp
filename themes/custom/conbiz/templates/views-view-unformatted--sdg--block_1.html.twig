@@ -1,0 +1,87 @@
+					<!--<div class="row">
+						<div id="tagline-block" style="text-align: center;">
+							<h2>Helping governments and stakeholders make the SDGs a reality</h2>
+						</div>
+					</div>	
+					<div class="row">
+						<div class="col" style="margin-bottom:2em;">
+						   <section class="events-area ptb-140 bg-1">
+								<div class="container-fluid">
+									<div class="row">  -->
+										{% for row in rows %}						
+											{%
+												set row_classes = [
+												  default_row_class ? cycle(['even', 'odd'], loop.index0),
+												  'views-row',
+												]
+											%}
+											{% set parity = cycle(['mainsdgbox1', 'mainsdgbox2', 'mainsdgbox3', 'mainsdgbox4', 'mainsdgbox5', 'mainsdgbox6', 'mainsdgbox7', 'mainsdgbox8', 'mainsdgbox9', 'mainsdgbox10', 'mainsdgbox11', 'mainsdgbox12', 'mainsdgbox13', 'mainsdgbox14', 'mainsdgbox15', 'mainsdgbox16', 'mainsdgbox17'], loop.index0) %}
+											{% set sdgbox= 'sdgbox' %}
+											{% if parity=='mainsdgbox2'%}
+												<div {{ row.attributes.addClass(sdgbox) }} {{attributes.setAttribute('id', parity) }} style="display:block;">
+													{{ row.content }}
+												</div>
+											{% else %}
+												<div {{ row.attributes.addClass(sdgbox) }} {{attributes.setAttribute('id', parity) }} style="display:none;">
+													{{ row.content }}
+												</div>
+											{% endif %}
+										{% endfor %}
+
+
+									<!--</div>
+								</div>
+							</section>
+						</div>
+					</div>-->
+					<div class="gsc-column col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12  ">
+						<div class="column-inner  bg-size-cover  ">
+							<div class="column-content-inner">
+								<div class="widget gsc-image text-center ">
+									<div class="widget-content">
+										<img id="sdgwheel" alt="SDG wheel" class="img-fluid" usemap="#Map" src="/hmp/themes/custom/conbiz/templates/IMG/sdgwheelnumbers455.png">
+										<!--<map name="Map" id="Map">
+										  <area alt="" title="" shape="poly" coords="389,14,492,35,437,176,388,168" onclick="clickBox(1)">
+										  <area alt="" title="" shape="poly" coords="517,43,607,101,502,216,461,189" onclick="clickBox(2)">
+										  <area alt="" title="" shape="poly" coords="524,233,626,117,688,201,552,272" onclick="clickBox(3)">
+										  <area alt="" title="" shape="poly" coords="564,296,700,228,725,324,579,336" onclick="clickBox(4)">
+										  <area alt="" title="" shape="poly" coords="580,367,731,353,723,452,577,412" onclick="clickBox(5)">
+										  <area alt="" title="" shape="poly" coords="567,438,713,483,671,568,548,483" onclick="clickBox(6)">
+										  <area alt="" title="" shape="poly" coords="531,503,649,593,577,663,497,537" onclick="clickBox(7)">
+										  <area alt="" title="" shape="poly" coords="473,549,551,677,458,718,427,568" onclick="clickBox(8)">
+										  <area alt="" title="" shape="poly" coords="354,575,402,574,434,720,326,724" onclick="clickBox(9)">
+										  <area alt="" title="" shape="poly" coords="282,552,327,571,298,719,203,680" onclick="clickBox(10)">
+										  <area alt="" title="" shape="poly" coords="223,503,258,539,179,670,101,598" onclick="clickBox(11)">
+										  <area alt="" title="" shape="poly" coords="185,440,206,483,86,575,37,483" onclick="clickBox(12)">
+										  <area alt="" title="" shape="poly" coords="172,364,175,411,29,458,19,351" onclick="clickBox(13)">
+										  <area alt="" title="" shape="poly" coords="190,290,174,336,23,324,55,223" onclick="clickBox(14)">
+										  <area alt="" title="" shape="poly" coords="230,227,199,266,63,199,126,118" onclick="clickBox(15)">
+										  <area alt="" title="" shape="poly" coords="293,188,249,213,148,98,237,46" onclick="clickBox(16)">
+										  <area alt="" title="" shape="poly" coords="260,35,363,15,367,166,315,177" onclick="clickBox(17)">
+										</map>-->
+										<map name="Map" id="Map">      
+											  <area alt="" title="" shape="poly" coords="237,105,267,110,298,23,269,12,237,11,235,61" onclick="clickBox(1)">
+											  <area alt="" title="" shape="poly" coords="279,115,304,131,371,63,313,27,299,61,289,93" onclick="clickBox(2)">
+											  <area alt="" title="" shape="poly" coords="315,140,335,167,418,123,402,94,379,72" onclick="clickBox(3)">
+											  <area alt="" title="" shape="poly" coords="340,178,349,207,445,199,436,165,425,136" onclick="clickBox(4)">
+											  <area alt="" title="" shape="poly" coords="351,223,444,214,444,244,440,279,348,253" onclick="clickBox(5)">
+											  <area alt="" title="" shape="poly" coords="344,266,435,292,422,322,407,348,330,292" onclick="clickBox(6)">
+											  <area alt="" title="" shape="poly" coords="321,304,397,360,376,389,348,407,300,328" onclick="clickBox(7)">
+											  <area alt="" title="" shape="poly" coords="287,332,338,413,306,427,278,439,258,344" onclick="clickBox(8)">
+											  <area alt="" title="" shape="poly" coords="246,350,263,439,226,444,195,440,214,349" onclick="clickBox(9)">
+											  <area alt="" title="" shape="poly" coords="200,345,184,438,146,431,122,412,169,333" onclick="clickBox(10)">
+											  <area alt="" title="" shape="poly" coords="159,327,108,407,79,387,58,360,134,305" onclick="clickBox(11)">
+											  <area alt="" title="" shape="poly" coords="124,294,50,350,34,323,22,291,110,265" onclick="clickBox(12)">
+											  <area alt="" title="" shape="poly" coords="107,252,17,276,11,244,12,212,104,222" onclick="clickBox(13)">
+											  <area alt="" title="" shape="poly" coords="108,206,12,199,20,167,31,132,114,177" onclick="clickBox(14)">
+											  <area alt="" title="" shape="poly" coords="142,140,122,165,38,120,56,93,78,70" onclick="clickBox(15)">
+											  <area alt="" title="" shape="poly" coords="178,115,152,129,89,61,112,42,146,27" onclick="clickBox(16)">
+											  <area alt="" title="" shape="poly" coords="224,9,224,105,191,107,156,20,193,12" onclick="clickBox(17)">
+										</map>
+									<!-- <img id="center-image" src="//sustainabledevelopment.un.org/content/images/image_logo_clean10008_60.jpg" alt="sdg decoration image"> -->
+									</div>
+								</div> 
+							</div>
+						</div>
+					</div>
+						

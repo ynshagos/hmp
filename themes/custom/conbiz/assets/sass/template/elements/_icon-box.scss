@@ -1,0 +1,307 @@
+.gsc-icon-box{
+  position: relative;
+  @include transition(all 0.35s);
+  @include clearfix();
+  display: flex;
+  @include media-breakpoint-down(xs){
+    margin-bottom: 30px;
+  }
+  @media (max-width: 575px){
+    display: block; 
+    text-align: center;
+    .highlight_content{
+      margin: 20px 0;
+    }
+  }
+  &.verticle-align-top{
+    align-items: flex-start;
+  }
+  &.verticle-align-bottom{
+    align-items: flex-end;
+  }
+  &.verticle-align-middle{
+    align-items: center;
+  }
+  &.icon-image{
+    img {
+      min-width: 70px;
+    }
+  }
+  .icon-container{
+    &.icon-shadow{
+      @include box-shadow(2px 4px 8px rgba(0, 0, 0, 0.16));
+    }
+    &.fa-stack{
+      text-align: center;
+    }
+    &.text-theme{
+      &[class*="border-"]{
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+    &.text-white{
+      &[class*="border-"]{
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+    &.text-black{
+      color: $headings-color;
+      &[class*="border-"]{
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+    &.radius-1x{
+      &:after{
+        @include border-radius(3px);
+      }
+    }
+    &.radius-2x{
+      &:after{
+        @include border-radius(5px);
+      }
+    }
+    &.radius-5x{
+      &:after{
+        @include border-radius(50%);
+      }
+    }
+    &.fa-1x{
+      width: 35px;
+      &.fa-stack{
+        line-height: 35px;
+        height: 35px;
+        font-size: 14px;
+      }
+    }
+    &.fa-2x{
+      width: 40px;
+      &.fa-stack{
+        line-height: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+    }
+    &.fa-3x{
+      width: 60px;
+      &.fa-stack{
+        width: 70px;
+        line-height: 70px;
+        height: 70px;
+        font-size: 20px;
+      }
+    }
+    &.fa-4x{
+      width: 72px;
+      &.fa-stack{
+        line-height: 82px;
+        height: 82px;
+        font-size: 30px;
+      }
+    }
+    &.fa-5x{
+      width: 80px;
+      &.fa-stack{
+        line-height: 80px;
+        height: 80px;
+        font-size: 30px;
+      }
+    }
+  }
+  .title{
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.6;
+    letter-spacing: -0.6px;
+    @include media-breakpoint-down(lg){
+      font-size: 17px; 
+    }
+  }
+  .button-action a{
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    line-height: 60px;
+    @include media-breakpoint-down(sm){
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+  &.icon-background{
+   .icon-container{
+     @include transition(all 0.5s); 
+     &:after{
+       top: 0px;
+       left: 0px;
+       z-index: 1;
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       content: '';
+       @include scale(1);
+       @include opacity(1);
+       @include transition(all 0.5s); 
+     }
+     &.bg-black{
+       &:after{
+         background: #222222;
+       }
+     }
+     &.bg-theme{
+       &:after{
+         background: $theme-color;
+       }
+     }
+   }
+   &.icon-border{
+     .icon-container{
+       &.bg-black{
+         border-color: #222222;
+       }
+       &.bg-theme{
+         border-color: $theme-color;
+       }
+     }
+   }
+  }
+  &.icon-border:not(.icon-background){
+    .icon-container{
+      color: $theme-color;
+    }
+  }
+  &.left {
+    @media (min-width: 576px){
+      .highlight_content{
+        padding-left: 26px;
+      }
+    }
+    .icon-container{
+      @include transition(all 0.35s); 
+    }
+    &:hover{
+      .icon-container {
+        transform: rotateY(180deg);
+      }
+    }
+    &.v1{
+      border-radius: 10px;
+      background-color: $white;
+      box-shadow: 0px 10px 30px 0px rgba(226, 226, 226, 0.35);
+      padding: 40px 40px 40px;
+      justify-content: space-between;
+      @include media-breakpoint-down(lg){
+        padding: 30px;
+      }
+      .highlight_content{
+        padding-left: 30px;
+        padding-right: 30px;   
+        @include media-breakpoint-up(sm){
+          padding-left: 20px;
+          padding-right: 20px;
+        }   
+      }
+      .button-action a{
+        background: $bg-gray;
+        color: $theme-color;
+        &:hover, &:focus, &:active{
+          color: $white;
+          background: $theme-color;
+        }
+      }
+      
+    }
+    &.v2{
+      @include media-breakpoint-up(sm){ 
+        .highlight_content{
+          margin-top: -8px;
+        } 
+      }
+    }
+    &.v3{
+      border: 1px solid $border-color;
+      padding: 60px 80px;
+      @include media-breakpoint-down(lg){
+        padding: 60px;
+      }
+      @include media-breakpoint-down(md){
+        padding: 30px;
+      }
+    }
+  }
+ &.top-center{ //Top center
+  display: block;
+   text-align: center;
+   max-width: 200px;
+   margin-right: auto;
+   margin-left: auto;
+    .icon-container{
+     display: inline-block;
+     margin-bottom: 30px;
+    }
+    .fa-stack{
+      box-shadow: 0px 10px 30px 0 rgba($black-2, 0.3);
+      @include border-radius(50%);
+    } 
+  }  
+
+  &.right, &.left{
+    
+  }
+  &.box-center{
+    text-align: center;
+    display: block;
+    .icon-container{
+     display: inline-block;
+     margin-bottom: 30px;
+    }
+  }
+  &.box-background{
+    padding: 30px 40px;
+    @include transition(all 0.35s);
+    @include border-radius(6px);
+    @include box-shadow(1px 5px 30px rgba(0, 0, 0, 0.1));
+    &.active, &:hover, &:focus, &:active{
+      @include box-shadow(0px 0px 10px 3px rgba(0, 0, 0, 0.1));
+    }
+  }
+  &.border-s1{
+    .icon-inner{
+      padding: 6px;
+      border: 2px solid $border-color;
+      display: inline-block;
+      .fa-stack{
+        line-height: 2.3em!important;
+        width: 2.2em;
+        height: 2.2em;
+      }
+      .fa-2x{
+        font-size: 1.6em;
+      }
+      .fa-1x{
+        font-size: 1.2em;
+        .fa-stack{
+          line-height: 2.3em!important;
+          width: 2.2em;
+          height: 2.2em;
+        }
+      }
+    }
+  }
+  .i-border-theme{
+    border-color: $theme_color!important;
+  }
+  .i-border-black{
+    border-color: $color-black!important; 
+  }
+  .i-border-dark{
+    border-color: #f1f1f1!important;
+  }
+  .i-border-white{
+    border-color: $white!important; 
+  }
+  &:hover{
+    .highlight-icon .icon{
+      animation: beat 1.5s ease 0s infinite;
+    }
+  }
+}  
